@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JETON ELEZI</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="jeton_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="jeton_logo.png">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.container1 {
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+}
+
+#text {
+    font-size: 36px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+#profession {
+    font-weight: bold;
+    color: #3498db;
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+
+    #text {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+
+#hero img {
+    width: 20%; /* Ose mund ta rritni në madhësinë që dëshironi, për shembull 60% ose 70% */
+    max-width: 150px; /* Shtoni një kufi për madhësinë maksimale */
+    height: 200px; /* Ruani përpjesëtimin e imazhit */
+    position: absolute; /* Pozicionimi absolute për ta vendosur imazhin në anën e djathtë */
+    top: 0; /* Vendosni lart, mund ta ndryshoni sipas dëshirës */
+    right: 0; /* Poziciononi në anën e djathtë */
+    margin-top: 145px;
+}
+
+
+}
+
+
+.language-selector {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-left: 180px;
+        }
+        .language-selector img {
+            cursor: pointer;
+            width: 30px; /* Gjatësia e flamurit */
+            height: 20px; /* Lartësia e flamurit */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .language-selector img:hover {
+            opacity: 0.7;
+        }
+     
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+
+
+#imageContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Për të bërë një sfond të errët */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#zoomContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#image:hover {
+    transform: scale(1.2); /* Efekti i zoom-it kur kalon miu mbi fotografinë */
+}
+
+#downloadLink button {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#downloadLink button:hover {
+    background-color: #45a049;
+}
+
+/* Kjo klasë është për të fshehur elementet në fillim */
+.hidden {
+    display: none;
+}
+
+
+.fa {
+  padding: 20px;
+  font-size: 170%;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius:80%;
+  
+}
+
+
+.fa:hover {
+    opacity: 0.1;
+}
+
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 3px black;
+  width: 65px;
+}
+
+
+.fa-instagram {
+  background: #db3e56;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 3px black;
+
+
+}
+
+.fa-envelope{
+    background: #0077ff;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 3px black;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(243, 243, 243);
+  color: rgb(0, 0, 0);
+}
+
+
+
+#hero img {
+    width: 70%; /* Ose mund ta rritni në madhësinë që dëshironi, për shembull 60% ose 70% */
+    max-width: 450px; /* Shtoni një kufi për madhësinë maksimale */
+    height: 700px; /* Ruani përpjesëtimin e imazhit */
+    position: absolute; /* Pozicionimi absolute për ta vendosur imazhin në anën e djathtë */
+    top: 0; /* Vendosni lart, mund ta ndryshoni sipas dëshirës */
+    right: 0; /* Poziciononi në anën e djathtë */
+    margin-top: 145px;
+}
+
+
+
+
+
+@media (max-width: 500px) {
+
+#hero img {
+width: 100%; /* Ose mund ta rritni në madhësinë që dëshironi, për shembull 60% ose 70% */
+max-width: 250px; /* Shtoni një kufi për madhësinë maksimale */
+height: 480px; /* Ruani përpjesëtimin e imazhit */
+position: absolute; /* Pozicionimi absolute për ta vendosur imazhin në anën e djathtë */
+top: 0; /* Vendosni lart, mund ta ndryshoni sipas dëshirës */
+right: 0; /* Poziciononi në anën e djathtë */
+margin-top: 200px;
+}
+
+
+}
+
+
+#service .row {
+    display: flex;
+    justify-content: space-between; /* Ose 'space-around' për më shumë hapësirë mes kolonave */
+}
+
+#service .col-sm-4 {
+    flex: 1; /* Siguron që çdo kolonë të ketë të njëjtën gjerësi */
+    padding: 10px; /* Opsionale për t'i shtuar hapësirë mes kolonave */
+}
+
+
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('Portfolio-5.jpg'); /* Vendosni URL-në e imazhit tuaj këtu */
+    background-size: cover;
+    background-position: center;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+
+
+
+
+.vids{
+    width: 280px; 
+    height: 320px;
+     margin-top: 30px;
+     border: solid black 2px; box-shadow: 6px 4px 8px;  
+      display: block;
+      margin-left:auto;
+      margin-right: auto;
+      margin-top: 80px;
+}
+
+
+.hero{
+    margin-top: -1000px;
+}
+
+@media (max-width: 500px) {
+    .hero{
+        margin-top: -700px;
+    }
+    }
+
+    @media (max-width: 1300px) {
+    .hero{
+        margin-top: -700px;
+    }
+    }
+
+
+    .footer {
+    padding: 90px 0 80px !important;
+    color: #999;
+    background-color: #1f1f1f;
+}
+
+.footer .widget-title {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.footer .widget-title small {
+    color: #999;
+    display: block;
+    padding: 0 58px;
+    text-transform: uppercase;
+}
+
+.footer .widget-title h3 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 21px;
+    padding: 0;
+    margin: 0;
+    line-height: 1 !important;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #999;
+}
+
+.footer-links a:hover,
+.footer a:hover {
+    color: #333333 !important;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.twitter-widget li {
+    margin-bottom: 0;
+    border: 0 !important;
+}
+
+.twitter-widget li i {
+    border-right: 0 !important;
+    margin-right: 0;
+}
+
+.footer-links li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: 0;
+}
+
+.footer-links i {
+    display: inline-block;
+    width: 25px;
+    margin-right: 10px;
+    border-right: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.copyrights {
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    background-color: #1f1f1f;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    padding: 30px 0px;
+    overflow: hidden;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+    float: left;
+}
+
+.footer-distributed .footer-links {
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    margin: 0 10px 0 10px;
+    text-decoration: none;
+}
+
+.footer-distributed .footer-company-name {
+    font-weight: 300;
+    margin: 0 10px;
+    color: #666;
+    padding: 0;
+}
+
+
+/* Footer right */
+
+.footer-distributed .footer-right {
+    float: right;
+}
+
+
+/* The search form */
+
+.footer-distributed form {
+    position: relative;
+}
+
+.footer-distributed form input {
+    display: block;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #181818;
+    border: none;
+    font: inherit;
+    font-size: 15px;
+    font-weight: normal;
+    color: #999;
+    width: 400px;
+    padding: 18px 50px 18px 18px;
+}
+
+.footer-distributed form input:focus {
+    outline: none;
+}
+
+
+/* Changing the placeholder color */
+
+.footer-distributed form input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.footer-distributed form input::-moz-placeholder {
+    opacity: 1;
+    color: #999;
+}
+
+.footer-distributed form input:-ms-input-placeholder {
+    color: #999;
+}
+
+
+/* The magnify glass icon */
+
+.footer-distributed form i {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    color: #999;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.footer-distributed .footer-company-name a{
+	color: #ffffff;
+}
+
+.footer-distributed .footer-company-name a:hover{
+	color: #cccccc;
+}
+</style>
+
+</head>
+<body>
+
+    <header id="masthead" class="site-header" data-anchor-target=".hero" data-top="background: rgba(255,255,255,0); padding: 30px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0);" data-top-bottom="background: rgba(255,255,255,1); padding: 10px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.2);">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+
+                    <button type="button" class="navbar-toggle collapsed" data-target="#portfolio-perfect-collapse" aria-expanded="false" >
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a href="index.html" class="site-logo"><img  style="width: 70px; height: 65px; margin-top: -15px;" src="jeton_logo.png" alt="logo"></a>
+
+                </div>
+
+                <div class="main-menu" id="portfolio-perfect-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page-scroll"><a href="index.html"data-translate-key="ballina">Ballina</a></li>
+                        <li class="page-scroll"><a href="#krev" data-translate-key="krev">Video Kreative</a></li>
+                        <li class="page-scroll"><a href="#magic"data-translate-key="magic">Video Magjike</a></li>
+                        <li class="page-scroll"><a href="#contact"data-translate-key="magic">Kontakti</a></li>
+
+                    
+                      
+                    </ul>
+                    
+                </div>
+                
+
+            </div>
+        </nav>
+    </header> 
+
+    <div id="hero" class="hero" >
+    
+        
+    </div>
+
+    <main id="main" class="site-main">
+
+     
+
+    <!--                   VIDEOOO KREATIVEEE-->
+        <section id="krev" class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h3 data-translate-key="punet" data-translate-key="portfolio">Portofoli im</h3>
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                    <br><br><br>
+                    <h2>Video Kreative</h2>
+                    
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="Videos\COVER\vid1.png" class="vids"  alt="">
+                            <div class="portfolio-item-info">
+                                <h4 style=" margin-top: -120px; margin-bottom: -20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">I Love You</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\iloveyou.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\xhamia-cover.png" class="vids"  alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 5px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Xhamia E Fshatit Strimnic</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\xhamia fsh strimnic e re.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\8marsi - cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -140px; margin-bottom: 5px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">8 Marsi</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\8marsi.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+            <section style="margin-top: -120px;" id="portfolio" class="site-section section-portfolio">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\mycar-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -140px; margin-bottom: 5px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Vetura</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\mycar.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\ski-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -140px; margin-bottom: 5px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Kodra E Diellit</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\ski video.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+    <!--                   VIDEOOO MAGIC TRICKKKK-->
+        <section id="magic" class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+             
+                    <br><br>
+                    <h2>Magic trick</h2>
+                    
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="Videos\COVER\fantazma-cover.png" class="vids" alt="">
+                            <div class="portfolio-item-info">
+                                <h4 style=" margin-top: -120px; margin-bottom: -20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Fantazma</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\fantazma.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\dit me shi - cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -140px; margin-bottom: 5px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Dit Me Shi</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\Dit me shi.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="Videos\COVER\make money-cover.png" class="vids" alt="">
+                            <div class="portfolio-item-info">
+                                <h4 style=" margin-top: -120px; margin-bottom: -20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Para Te Shpejta</h4>
+                                <video style="margin-left: -33px;"   width="320" height="240" controls>
+                                    <source src="Videos\make - money.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+
+
+
+                    <section style="margin-top: -120px;" id="portfolio" class="site-section section-portfolio">
+                        <div class="container">
+                           
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\gjumi-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Gjumi</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\Gjumi.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\popcorn-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PopCorn</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\popcorn.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\Screenshot 2025-03-14 015656.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Makiato</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\Makiato.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+
+            <section style="margin-top: -120px;" id="portfolio" class="site-section section-portfolio">
+                <div class="container">
+                   
+      
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\hupi-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Humbi :(</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\hupi.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\veza-kover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PopCorn</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\veza.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\veshi-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Helikopter</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\veshi.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+            <section style="margin-top: -120px;" id="portfolio" class="site-section section-portfolio">
+                <div class="container">
+                   
+      
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\paret1-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">i hupa paret :(</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\Paret.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\glitch-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">? :(</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\glitch.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            
+                            <img src="Videos\COVER\ftofet-cover.png" class="vids" alt="">
+                            
+                            <div class="portfolio-item-info">
+                                
+                                <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">? :(</h4>
+                                <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                    <source src="Videos\Ftohet.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+        <section style="margin-top: -120px;" id="portfolio" class="site-section section-portfolio">
+            <div class="container">
+               
+  
+                <div class="col-md-4 col-xs-6">
+                    <div class="portfolio-item">
+                        
+                        <img src="Videos\COVER\7gishtat cover.png" class="vids" alt="">
+                        
+                        <div class="portfolio-item-info">
+                            
+                            <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">7 gishta</h4>
+                            <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                <source src="Videos\7-gishtat.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+
+                              </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="portfolio-item">
+                        
+                        <img src="Videos\COVER\dera- cover.png" class="vids" alt="">
+                        
+                        <div class="portfolio-item-info">
+                            
+                            <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ku shkoi Jetoni ?</h4>
+                            <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                <source src="Videos\dera.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+
+                              </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="portfolio-item">
+                        
+                        <img src="Videos\COVER\bicikleta-cover.png" class="vids" alt="">
+                        
+                        <div class="portfolio-item-info">
+                            
+                            <h4 style=" margin-top: -120px; margin-bottom: 20px;  text-align: center; font-size: 24px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Bicikleta</h4>
+                            <video style="margin-left: -33px; padding-bottom: 80px;"   width="320" height="240" controls>
+                                <source src="Videos\bicikleta.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+
+                              </video>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+                </div>
+        </section>
+
+
+
+
+
+
+        <section id="contact" class="site-section section-form text-center">
+            <div class="container">
+
+                <h3>Contact</h3>
+                <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                <form>
+                    
+                    <p style="text-align: left; margin-left: 60px"> <a href="https://www.facebook.com/jeton.elezi.583" style="margin-right: 20px;"  class="fa fa-facebook"></a><a href="https://www.facebook.com/jeton.elezi.583">Jeton Elezi</a></p>
+                    <br>
+                    <p style="text-align: left; margin-left: 60px"> <a href="https://www.instagram.com/jetonelezi01/" style="margin-right: 20px;"  class="fa fa-instagram"></a><a href="https://www.instagram.com/jetonelezi01/">@jetonelezi01</a></p>
+                    <br>
+                    <p style="text-align: left; margin-left: 60px"> <a href="https://mail.google.com/" style="margin-right: 20px;"  class="fa fa-envelope"></a><a href="https://mail.google.com/">jeton.elezi01@gmail.com</a></p>
+                </form>
+            </div>
+        </section><!-- /.section-form -->
+        <div class="copyrights">
+            <div class="container">
+                <div class="footer-distributed">
+                    <div class="footer-left">
+              
+                        <p class="footer-company-name" style="text-align: center;"  >All Rights Reserved. &copy; 2025 <a href="#">jeton-elezi.info</a> Design By : "Jeton Elezi" </p>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
+    <script src="assets/js/jquery.countTo.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+<script>
+const professions = ['Web Developer', 'Video Creator'];
+let currentProfessionIndex = 0;
+let textElement = document.getElementById("profession");
+
+function changeProfession() {
+    let currentProfession = professions[currentProfessionIndex];
+    let nextProfession = professions[(currentProfessionIndex + 1) % professions.length];
+    
+    // Fshi shkronjat e fjalës aktuale
+    let currentText = textElement.innerText;
+    let i = 0;
+    let deleteInterval = setInterval(() => {
+        textElement.innerText = currentText.slice(0, -i);
+        i++;
+        if (i > currentText.length) {
+            clearInterval(deleteInterval);
+            setTimeout(() => {
+                // Shfaq fjalën e re
+                let j = 0;
+                textElement.innerText = '';
+                let addInterval = setInterval(() => {
+                    textElement.innerText = nextProfession.slice(0, j);
+                    j++;
+                    if (j > nextProfession.length) {
+                        clearInterval(addInterval);
+                        // Prit për 1 sekondë dhe ndrysho përsëri
+                        setTimeout(() => {
+                            currentProfessionIndex = (currentProfessionIndex + 1) % professions.length;
+                            changeProfession();
+                        }, 500);
+                    }
+                }, 100);
+            }, 300);
+        }
+    }, 50);
+
+}
+
+changeProfession();
+
+
+
+const translations = {
+
+
+
+        "krev":{
+                    "shqip" : "Video Kreative",
+                    "anglisht" : "Creativity Video",
+                },
+                "magic":{
+                    "shqip" : "Video Magjike",
+                    "anglisht" : "Magic Trick Video",
+                },
+
+                "portofol":{
+                    "shqip" : "Portofoli",
+                    "anglisht" : "Wallet",
+                },
+
+                "ballina":{
+                    "shqip" : "Ballina",
+                    "anglisht" : "Home",
+                },
+           
+
+
+                
+    };
+
+    // Variabli që ruan gjuhën aktuale
+    let currentLanguage = "shqip";  // Gjuhën e paracaktuar (Shqip)
+
+    // Funksioni për të vendosur gjuhën
+    function setLanguage(language) {
+        currentLanguage = language;  // Përdorimi i gjuhës së zgjedhur
+
+        // Ndrysho tekstin në të gjithë faqen që ka atributin data-translate-key
+        const elements = document.querySelectorAll("[data-translate-key]");  // Gjej të gjitha elementet që kanë atributin data-translate-key
+        elements.forEach(element => {
+            const key = element.getAttribute("data-translate-key");  // Merr çelësin përkthimi
+            const translation = translations[key];  // Merr përkthimin për çelësin
+            if (translation) {
+                element.innerText = translation[currentLanguage];  // Ndrysho tekstin në element
+            }
+        });
+    }
+
+    // Funksioni për të ndërruar gjuhën në fillim kur faqja ngarkohet
+    window.onload = function() {
+        setLanguage(currentLanguage);  // Vendos gjuhën e paracaktuar kur faqja hapet
+    }
+
+
+
+
+
+    document.getElementById('btnReadMore').addEventListener('click', function() {
+    // Shfaqim tekstin e fshehur
+    document.getElementById('extraText').style.display = 'block';
+    
+    // Fshijmë butonin 'Lexo më shumë'
+    document.getElementById('btnReadMore').style.display = 'none';
+    
+    // Shfaqim butonin 'Largo tekstin'
+    document.getElementById('btnHide').style.display = 'inline';
+});
+
+document.getElementById('btnHide').addEventListener('click', function() {
+    // Fshehim tekstin që u shfaq
+    document.getElementById('extraText').style.display = 'none';
+    
+    // Shfaqim butonin 'Lexo më shumë'
+    document.getElementById('btnReadMore').style.display = 'inline';
+    
+    // Fshijmë butonin 'Largo tekstin'
+    document.getElementById('btnHide').style.display = 'none';
+});
+
+
+
+document.getElementById('showImageBtn').addEventListener('click', function() {
+    // Shfaqim div-in me fotografinë
+    document.getElementById('imageContainer').classList.remove('hidden');
+});
+
+// Për të mbyllur fotografinë kur të klikohet jashtë saj
+document.getElementById('imageContainer').addEventListener('click', function(e) {
+    if (e.target === this) {
+        document.getElementById('imageContainer').classList.add('hidden');
+    }
+});
+
+
+    
+</script>
+    
+</body>
+</html>

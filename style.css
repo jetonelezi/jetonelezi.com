@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #35424a;
+}
+
+.skill {
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.cd-headline {
+    position: relative;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.cd-headline.letters b {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.cd-headline.letters b.is-visible {
+    position: relative;
+    opacity: 1;
+}
+
+.cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.cd-words-wrapper b {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.cd-words-wrapper b.is-visible {
+    position: relative;
+    opacity: 1;
+}
+
